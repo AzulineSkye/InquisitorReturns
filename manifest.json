@@ -1,0 +1,11 @@
+{
+	"name": "InquisitorReturns",
+	"version_number": "0.0.1",
+	"website_url": "https://youtu.be/uh4Ic2hGoGA?si=fFWgRvxT2wGVG6PZ",
+	"description": "LIFE IS A JOURNEY, NOT A DESTINATION, ENJOY THE RIDE WITH UPS AND DOWNS!",
+	"dependencies": [
+		"ReturnOfModding-ReturnOfModding-1.1.3",
+		"LuaENVY-ENVY-1.2.0",
+		"ReturnsAPI-ReturnsAPI-1.0.0"
+	]
+}
