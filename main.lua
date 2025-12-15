@@ -5,21 +5,31 @@ PATH = _ENV["!plugins_mod_folder_path"]
 Options = ModOptions.new("inq")
 
 Settings = {
-	funny = false,
+	enable_funny = false,
 }
 
 SettingsFile = TOML.new()
 
 local init = function()
-	--- Initialize settings here before requiring anything, useful if some options require a restart to apply.
 	if SettingsFile:read() == nil then
 		SettingsFile:write(Settings)
 	else
 		Settings = SettingsFile:read()
 	end
-				
-	require(path.combine(PATH, "inputLibrary.lua")
-	require(path.combine(PATH, "inquisitor.lua")
+	
+	local folders = {
+		"Language",
+		"Code"
+	}
+
+	for _, folder in ipairs(folders) do
+		local filepaths = path.get_files(path.combine(PATH, folder))
+		for _, filepath in ipairs(filepaths) do
+			if string.sub(filepath, -4, -1) == ".lua" then
+				require(filepath)
+			end
+		end
+	end
 	
 	HOTLOADING = true
 end
